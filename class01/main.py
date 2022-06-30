@@ -124,7 +124,34 @@ x,y = y,x
 print(f"x: {x}, y:{y}")
 """
 
-if 3:
-    print("This is true")
+# 控制流程
+"""
+num = int(input())
+if num > 200:
+    print(f"{num} > 200")
 else:
-    print("This is false")
+    print(f"{num} <= 200")
+"""
+
+# 非 0 是 True，0 是 False
+"""
+if 0:
+    print("This is Ture")
+else:
+    print("This is False")
+"""
+
+# if/elif/else
+"""
+num = int(input())
+if num > 200:
+    print(f"{num} > 200")
+elif 100 <= num <= 200:
+    print(f"100 <= {num} <= 200")
+else:
+    print(f"{num} < 100")
+"""
+
+# if/elif/else vs. 多個 if
+
+
