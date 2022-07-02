@@ -170,7 +170,7 @@ if num >= 0:
     print(f"{num} >= 2")
 """
 
-# if/else 練習
+# if/else 解答
 """
 x = int(input())
 y = int(input())
