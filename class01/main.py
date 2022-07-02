@@ -153,5 +153,57 @@ else:
 """
 
 # if/elif/else vs. 多個 if
+"""
+num = 3
+if num >= 2:
+    print(f"{num} >= 2")
+elif num >= 1:
+    print(f"{num} >= 1")
+else:
+    print(f"{num} >= 0")
 
+if num >= 2:
+    print(f"{num} >= 2")
+if num >= 1:
+    print(f"{num} >= 1")
+if num >= 0:
+    print(f"{num} >= 2")
+"""
+
+# if/else 練習
+"""
+x = int(input())
+y = int(input())
+z = int(input())
+
+if x > y:
+    ans = x
+else:
+    ans = y
+
+if z > ans:
+    ans = z
+
+print(f"最大值: {ans}")
+"""
+
+# Nested if
+"""
+n = int(input("Enter a number"))
+if n % 2 == 1:
+    print("Weird")
+elif n % 2 == 0:
+    if 2 <= n <= 5:
+        print("Not Weird")
+    elif 6 <= n <= 20:
+        print("Weird")
+    elif n > 20:
+        print("Not Weird")
+"""
+
+# while 迴圈
+i = 0
+while i < 10:
+    print(i)
+    i += 1
 
