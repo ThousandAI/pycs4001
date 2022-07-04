@@ -230,7 +230,51 @@ a[:,2] = [7,8]
 print(a)
 """
 
-# array 必須要儲存同一種型態的資料
+# index/slice/3D
+"""
+a = np.array([[[1,2],[3,5],[7,8]],
+              [[1,7],[-3,2],[10,2]],
+              [[6,-2],[5,-3],[7,9]],
+              [[8,5],[-2,2],[26,-2]],
+              [[1,-7],[-3,2],[-5,-2]],])
+
+print(a)
+print(a.shape) 
+print(a[3,2,0])
+print(a[:,1,:])
+"""
+
+# initializing
+"""
+a = np.zeros((5,3,2))
+b = np.ones((2,3))
+c = np.ones((2,3), dtype=np.int32)
+d = np.full((2,3), 100, dtype=np.float32)
+print(a)
+print(b,b.dtype)
+print(c,c.dtype)
+print(d,d.dtype)
+"""
+
+# random
+"""
+x = np.random.rand(3,2)
+y = np.random.randint(low=10, high=100, size= (3,2))
+print(x)
+print(y)
+"""
+
+# 基本運算
+"""
+a = np.array([[1,2,3],[4,5,6]])
+print(a + 2)
+print(a - 2)
+print(a * 2)
+print(a / 2)
+print(a ** 2)
+"""
+
+# 運算 (list vs. array)
 """
 a = [1,2,3]
 b = [4,5,6]
@@ -245,3 +289,39 @@ y = np.array([4,5,6])
 print(x+y) # 平行運算
 
 """
+
+# 矩陣乘法
+"""
+a = np.array([[1,2],[3,4],[5,6]])
+b = np.array([[2,3,1],[5,2,1]])
+print(np.matmul(a,b))
+"""
+
+# 乘法單位元素
+"""
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+identity = np.identity(3)
+print(np.matmul(a,identity))
+"""
+
+# copy
+"""
+a = np.array([[1,2],[3,4]])
+b = a
+b[0,0] = 3
+print(a)
+print(b)
+c = a.copy()
+c[0,0] = 5
+c[1,0] = -1
+print(a)
+print(b)
+print(c)
+"""
+
+# statistics
+a = np.array([[92,83,56,77,98],[81,53,64,76,60]])
+print(np.max(a,axis=0))
+print(np.max(a,axis=1))
+print(np.sum(a,axis=0))
+print(np.sum(a,axis=1))
