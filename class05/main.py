@@ -55,14 +55,35 @@ data = pd.read_csv("https://raw.githubusercontent.com/KeithGalli/pandas/master/p
 """
 
 # Describing / Sorting / Sum / Drop
+"""
 # print(data.describe())
 # print(data.sort_values(["HP"], ascending=True))
+ 
+# data["Total"] = data.iloc[:, 4:10].sum(axis=1)
+# print(data)
 
-data["Total"] = data.iloc[:, 4:10].sum(axis=1)
-print(data)
-
-data = data.drop(columns=["#"])
-print(data)
+# data = data.drop(columns=["#"])
+# print(data)
 
 # to csv
-data.to_csv("new_pokemon.csv", index=False)
+# data.to_csv("new_pokemon.csv", index=False)
+"""
+
+# Filtering
+"""
+# print(data.loc[(data["Type 1"] == "Fire") & (data["Type 2"] == "Flying")])
+
+# print(data.loc[(data["Type 1"] == "Fire") | (data["Type 2"] == "Flying")])
+
+new_data = data.loc[(data["Type 1"] == "Fire")]
+print(new_data)
+new_data = new_data.reset_index(drop=True)
+print(new_data)
+"""
+
+# groupby
+"""
+# print(data.groupby(["Type 1"]).mean())
+# print(data.groupby(["Type 1"]).std())
+# print(data.groupby(["Type 1"]).sum())
+"""
