@@ -87,3 +87,46 @@ print(new_data)
 # print(data.groupby(["Type 1"]).std())
 # print(data.groupby(["Type 1"]).sum())
 """
+
+# matplotlib
+
+"""
+x = np.array([1, 2, 3, 4, 5, 6])
+y = 2*x + 3
+
+y2 = x**2
+
+plt.plot(x, y, label='A', color = 'red', marker = '*', markersize = 10, linestyle = '--')
+plt.plot(x, y2, label = 'B', color = 'blue')
+plt.title("pycs4001 First Figure", fontdict={'fontname': 'Arial Black', 'fontsize': 16})
+plt.xlabel("X label", fontdict={'fontname': 'Arial'})
+plt.ylabel("Y label", fontdict={'fontname': 'Arial'})
+
+# plt.xticks([0,1,2,3])
+# plt.yticks([0,2,4,6,8,10])
+plt.legend()
+plt.savefig("pycs4001-01.png")
+plt.show()
+"""
+
+# hist
+"""
+x = np.random.normal(0, 1, 10000)
+plt.hist(x, bins=100)
+plt.title("Gaussian Distribution", fontdict={'fontname': 'Arial Black', 'fontsize': 16})
+plt.xlabel("x range", fontdict={'fontname': 'Arial'})
+plt.ylabel("Times", fontdict={'fontname': 'Arial'})
+plt.savefig("pycs4001-02.png")
+plt.show()
+"""
+
+# scatter
+
+dummy1 = np.random.multivariate_normal(mean = [-2,2], cov = [[1,0],[0,1]], size=2000)
+dummy2 = np.random.multivariate_normal(mean = [2,-2], cov = [[1,0],[0,1]], size=2000)
+
+plt.scatter(dummy1[:,0], dummy1[:,1], s = 2, label = 'A')
+plt.scatter(dummy2[:,0], dummy2[:,1], s = 2, label = 'B')
+plt.legend()
+plt.savefig("pycs4001-03.png")
+plt.show()
