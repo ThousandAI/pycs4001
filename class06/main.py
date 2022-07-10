@@ -1,28 +1,21 @@
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import StandardScaler
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
 
-data = pd.read_csv("./Salary_Data.csv")
+X, Y = datasets.make_regression(n_samples=1000, n_features=1, noise=10, random_state=10)
 
-scaler  = StandardScaler()
-scaler .fit(data)
-sc_data = scaler.transform(data)
+train_x, test_x, train_y, test_y  = train_test_split(X, Y, test_size=0.2, random_state=10)
 
-# print(sc_data)
-"""
-print(sc_data[:, 0].mean())
-print(sc_data[:, 0].std())
-print(sc_data[:, 1].mean())
-print(sc_data[:, 1].std())
-"""
+regression = LinearRegression()
+regression.fit(train_x, train_y)
+y_p = regression.predict(test_x)
+Y_pred = regression.predict(X)
 
+print(f"evaluation MSE: {mean_squared_error(test_y, y_p)}")
 
-train_x = np.array(data["YearsExperience"])
-train_y = np.array(data["Salary"])
-# train_x = np.array(sc_data[:,0])
-# train_y = np.array(sc_data[:,1])
-
-plt.scatter(train_x, train_y, color="red", s=10)
-plt.title("Salary & Years")
+plt.scatter(X[:, 0], Y, s = 3)
+plt.plot(X,Y_pred, color = 'red')
 plt.show()
