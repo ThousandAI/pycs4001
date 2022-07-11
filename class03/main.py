@@ -206,7 +206,7 @@ utils.introduce(name="Thousand", age=30, gender="Male")
 print(utils.get_max(numbers=numbers))
 print(utils.get_distance(point1=[3,5], point2=[6,1]))
 
-print(f"This is main.py: {__name__}")
+print(f"This is logistic_regression.py: {__name__}")
 """
 
 # package
